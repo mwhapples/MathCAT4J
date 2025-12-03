@@ -13,7 +13,7 @@
 
     <packaging>pom</packaging>
     <name>MathCAT4J</name>
-    <description>Java bindings for MathCAT</description>
+    <description>Java API for MathCAT</description>
     <url>https://github.com/mwhapples/MathCAT4J</url>
     <inceptionYear>2022</inceptionYear>
     <licenses>

@@ -7,6 +7,8 @@
  */
 package onl.mdw.mathcat4j.api;
 
+import org.jspecify.annotations.NonNull;
+
 /**
  * Factory for creating MathCatManager instances.
  */
@@ -15,5 +17,5 @@ public interface MathCatFactory {
      * Create an instance of MathCatManager.
      * @return A MathCatManager instance.
      */
-    MathCatManager create();
+    @NonNull MathCatManager create();
 }

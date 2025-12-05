@@ -8,6 +8,7 @@
 package onl.mdw.mathcat4j.api;
 
 import lombok.Value;
+import org.jspecify.annotations.NonNull;
 
 /**
  * Node ID based navigation position.
@@ -17,7 +18,7 @@ public class NavigationId {
     /**
      * The ID of the node.
      */
-    String id;
+    @NonNull String id;
     /**
      * The offset within the node.
      */
@@ -28,7 +29,7 @@ public class NavigationId {
      * @return The node ID.
      */
     @Deprecated
-    public String id() {
+    public @NonNull String id() {
         return getId();
     }
 

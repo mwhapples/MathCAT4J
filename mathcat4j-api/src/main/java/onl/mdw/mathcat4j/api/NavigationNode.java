@@ -8,6 +8,7 @@
 package onl.mdw.mathcat4j.api;
 
 import lombok.Value;
+import org.jspecify.annotations.NonNull;
 
 /**
  * Node based navigation position.
@@ -17,7 +18,7 @@ public class NavigationNode {
     /**
      * The node XML.
      */
-    String node;
+    @NonNull String node;
     /**
      * The offset in the node.
      */
@@ -28,7 +29,7 @@ public class NavigationNode {
      * @return The node XML.
      */
     @Deprecated
-    public String node() {
+    public @NonNull String node() {
         return getNode();
     }
 

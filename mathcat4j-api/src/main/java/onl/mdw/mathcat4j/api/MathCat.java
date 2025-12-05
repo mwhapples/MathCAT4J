@@ -7,6 +7,8 @@
  */
 package onl.mdw.mathcat4j.api;
 
+import org.jspecify.annotations.NonNull;
+
 /**
  * The MathCAT API.
  */
@@ -16,41 +18,41 @@ public interface MathCat {
      *
      * @return The MathCAT library version
      */
-    String getVersion();
+    @NonNull String getVersion();
     /**
      * Set the rules directory.
      *
      * Like with the MathCAT library, this should be the first function call you make when using the MathCAT library.
      * @param dir The directory containing the rules files.
      */
-    void setRulesDir(String dir);
+    void setRulesDir(@NonNull String dir);
     /**
      * Get a preference.
      *
      * @param name The name of the preference.
      * @return The value of the preference.
      */
-    String getPreference(String name);
+    @NonNull String getPreference(@NonNull String name);
     /**
      * Set a preference.
      *
      * @param name The name of the preference.
      * @param value The value to be set.
      */
-    void setPreference(String name, String value);
+    void setPreference(@NonNull String name, @NonNull String value);
     /**
      * Set the MathML content.
      *
      * @param mathmlStr The MathML string.
      * @return The canonical MathML representation with IDs set on elements.
      */
-    String setMathml(String mathmlStr);
+    @NonNull String setMathml(@NonNull String mathmlStr);
     /**
      * Get the Braille representing an element.
      *
      * @return The Braille of the requested element.
      */
-    default String getBraille() {
+    default @NonNull String getBraille() {
         return getBraille("");
     }
     /**
@@ -59,27 +61,27 @@ public interface MathCat {
      * @param navigationId The ID of the element. Setting this to the empty string will get the Braille for the whole MathML.
      * @return The Braille of the requested element.
      */
-    String getBraille(String navigationId);
+    @NonNull String getBraille(@NonNull String navigationId);
 
     /**
      * Get the Braille for the current navigation node.
      * @return The Braille at the current navigation position.
      */
-    String getNavigationBraille();
+    @NonNull String getNavigationBraille();
 
     /**
      * Get the spoken text for the MathML which was set.
      *
      * @return The spoken text for the MathML.
      */
-    String getSpokenText();
+    @NonNull String getSpokenText();
 
     /**
      * Get the spoken overview text for the MathML which was set.
      *
      * @return The spoken overview text of the MathML.
      */
-    String getOverviewText();
+    @NonNull String getOverviewText();
 
     /**
      * Perform navigation by keypress.
@@ -91,7 +93,7 @@ public interface MathCat {
      * @param metaKey Whether the meta key is pressed.
      * @return The spoken text resulting from the navigation.
      */
-    String doNavigateKeypress(int key, boolean shiftKey, boolean controlKey, boolean altKey, boolean metaKey);
+    @NonNull String doNavigateKeypress(int key, boolean shiftKey, boolean controlKey, boolean altKey, boolean metaKey);
 
     /**
      * Perform navigation based on a command.
@@ -99,58 +101,58 @@ public interface MathCat {
      * @param command The navigation command.
      * @return The spoken text resulting from the navigation.
      */
-    String doNavigateCommand(String command);
+    @NonNull String doNavigateCommand(@NonNull String command);
 
     /**
      * Get the MathML of the current navigation.
      *
      * @return The navigation position containing the XML of the node.
      */
-    NavigationNode getNavigationMathml();
+    @NonNull NavigationNode getNavigationMathml();
 
     /**
      * Get the ID of the current navigation.
      *
      * @return The navigation position containing the node ID.
      */
-    NavigationId getNavigationMathmlId();
+    @NonNull NavigationId getNavigationMathmlId();
 
     /**
      * Set the navigation node by id and offset.
      * @param id     The id of the node.
      * @param offset The offset within the node.
      */
-    void setNavigationNode(String id, int offset);
+    void setNavigationNode(@NonNull String id, int offset);
 
     /**
      * Get the range of Braille positions for the current node.
      * @return The range of the Braille positions.
      */
-    PositionRange getBraillePosition();
+    @NonNull PositionRange getBraillePosition();
 
     /**
      * Get the navigation node from the Braille position.
      * @param position The Braille position to find the node.
      * @return The navigation node relating to the position.
      */
-    NavigationNode getNavigationNodeFromBraillePosition(int position);
+    @NonNull NavigationNode getNavigationNodeFromBraillePosition(int position);
 
     /**
      * Get the supported Braille codes.
      * @return An array of the Braille codes supported.
      */
-    String[] getSupportedBrailleCodes();
+    @NonNull String[] getSupportedBrailleCodes();
 
     /**
      * Get the supported languages.
      * @return An array of the supported languages.
      */
-    String[] getSupportedLanguages();
+    @NonNull String[] getSupportedLanguages();
 
     /**
      * Get the supported speech styles for a given language.
      * @param lang The language of the speech styles.
      * @return An array of the supported speech styles.
      */
-    String[] getSupportedSpeechStyles(String lang);
+    @NonNull String[] getSupportedSpeechStyles(@NonNull String lang);
 }

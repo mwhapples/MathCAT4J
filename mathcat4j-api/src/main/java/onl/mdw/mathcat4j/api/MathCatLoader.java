@@ -7,6 +7,8 @@
  */
 package onl.mdw.mathcat4j.api;
 
+import org.jspecify.annotations.NonNull;
+
 import java.util.Optional;
 import java.util.ServiceLoader;
 
@@ -17,7 +19,7 @@ public class MathCatLoader {
     /**
      * The singleton instance.
      */
-    public static final MathCatLoader INSTANCE = new MathCatLoader();
+    @NonNull public static final MathCatLoader INSTANCE = new MathCatLoader();
     private MathCatLoader() {}
     private final ServiceLoader<MathCatFactory> serviceLoader = ServiceLoader.load(MathCatFactory.class);
 
@@ -25,7 +27,7 @@ public class MathCatLoader {
      * Gets the first located implementation of MathCAT.
      * @return An optional containing the first located implementation of MathCAT, otherwise empty.
      */
-    public Optional<MathCatFactory> getMathCatFactory() {
+    @NonNull public Optional<@NonNull MathCatFactory> getMathCatFactory() {
         return serviceLoader.findFirst();
     }
 

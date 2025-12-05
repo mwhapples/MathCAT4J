@@ -7,11 +7,37 @@
  */
 package onl.mdw.mathcat4j.api;
 
+import lombok.Value;
+
 /**
  * Node ID based navigation position.
- *
- * @param id the ID of the navigation node.
- * @param offset the character offset from the node.
  */
-public record NavigationId(String id, int offset) {
+@Value
+public class NavigationId {
+    /**
+     * The ID of the node.
+     */
+    String id;
+    /**
+     * The offset within the node.
+     */
+    int offset;
+
+    /**
+     * Use getId() instead.
+     * @return The node ID.
+     */
+    @Deprecated
+    public String id() {
+        return getId();
+    }
+
+    /**
+     * Use getOffset() instead.
+     * @return The offset in the node.
+     */
+    @Deprecated
+    public int offset() {
+        return getOffset();
+    }
 }

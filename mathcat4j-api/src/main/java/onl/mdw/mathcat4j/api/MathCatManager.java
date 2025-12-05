@@ -22,5 +22,5 @@ public interface MathCatManager {
      * @return The return value from the block.
      * @param <T> The type returned by the block.
      */
-    <T> T run(@NonNull Function<? super MathCat, ? extends T> block);
+    <T> T run(@NonNull Function<? super @NonNull MathCat, ? extends T> block);
 }

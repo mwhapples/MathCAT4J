@@ -37,9 +37,9 @@
     </scm>
 
     <properties>
-        <revision>1.0.2</revision>
+        <revision>1.0.3</revision>
         <sha1/>
-        <changelist/>        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <changelist>-SNAPSHOT</changelist>        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <kotlin.code.style>official</kotlin.code.style>

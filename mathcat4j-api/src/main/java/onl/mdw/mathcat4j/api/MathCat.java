@@ -21,7 +21,6 @@ public interface MathCat {
     @NonNull String getVersion();
     /**
      * Set the rules directory.
-     *
      * Like with the MathCAT library, this should be the first function call you make when using the MathCAT library.
      * @param dir The directory containing the rules files.
      */

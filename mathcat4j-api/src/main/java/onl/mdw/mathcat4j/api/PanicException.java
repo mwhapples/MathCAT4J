@@ -11,7 +11,6 @@ import org.jspecify.annotations.NonNull;
 
 /**
  * Exception to indicate when there is a panic in the rust code.
- *
  * If the JNI bindings detect a panic in the MathCAT rust code then an exception of this type will be thrown. In many cases it is said that you should not use panic for control flow, so the main reason for this exception type is to allow JVM code catch the panic and close down the JVM in a controlled way.
  */
 public class PanicException extends RuntimeException {
